@@ -14,19 +14,34 @@ class MyApp extends StatelessWidget {
     // Cupertino어쩌구()-> 아이폰 ui 위젯을 사용 가능
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-            title: Text('앱임')
-        ),
-        body: Align(
-          alignment: Alignment.topCenter,
-          child: Container(
-            width: double.infinity, height: 50, color: Colors.blue,
-            // margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-            // decoration: BoxDecoration(
-            //   border: Border.all(color: Colors.black),
-            // ),
+        appBar: AppBar(),
+        body: Container(
+          height: 150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset('200.png', width: 150,),
+              Container(
+                width: 300,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('캐논 DSLR 100D'),
+                    Text('금호동 3가'),
+                    Text('30000원'),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text('4')
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-        ),
+        )
       )
     );
   }
