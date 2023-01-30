@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() {
   // app 구동시켜주세요~
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  var a = 1;
+
   @override
   Widget build(BuildContext context) {
 
@@ -14,6 +16,13 @@ class MyApp extends StatelessWidget {
     // Cupertino어쩌구()-> 아이폰 ui 위젯을 사용 가능
     return MaterialApp(
       home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+            child: Text(a.toString()),
+            onPressed: (){
+                a++;
+
+              },
+        ),
         appBar: AppBar(),
         // ListView : 스크롤바 생김, 스크롤 위치 감지 가능, 메모리 절약
         body: ListView.builder(
